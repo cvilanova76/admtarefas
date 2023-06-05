@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" <html xmlns:th="http://www.thymeleaf.org">
+    >
 
 <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -28,7 +29,7 @@
                 <div class="card-header">Edite uma tarefa</div>
             </div>
             <div class="card-body"> 
-                <form action="#" th:action="@{/todo/{id}(id=$(todo.id))}" th:object="${todo}" method="POST">
+                <form action="#" th:action="@{/todo/{id}(id=${todo.id})}" th:object="${todo}" method="POST">
                     <div class="form-group mt-3">
                         <div class="col-6">
                             <label for="title">Título</label>
