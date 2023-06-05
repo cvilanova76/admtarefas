@@ -14,9 +14,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "tasks")
+@Table(name = "todo_items")
 // serialização para encapsular os dados numa série, otimizando o processo
-public class Task implements Serializable {
+public class TodoItem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
