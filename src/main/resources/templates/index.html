@@ -24,6 +24,7 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
+                        <th>Ações</th>
                         <th>Id</th>
                         <th>Título</th>
                         <th>Descrição</th>
@@ -40,15 +41,15 @@
                         <td th:text="${task.description}"></td>
                         <td th:text="${task.createdAt}"></td>
                         <td>
-                            <span th:if="${task.isComplete} == true" th:text="Sim">
-                                <span th:unless="${task.isComplete} == true" th:text="Não">
+                            <span th:if="${task.isComplete} == true" th:text="Sim" />
+                            <span th:unless="${task.isComplete} == true" th:text="Não" />
                         </td>
                         <td th:text="${task.endDate}"></td>
                     </tr>
                 </tbody>
             </table>
 
-            <p><a  class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark"></i>Crie uma tarefa</a>
+            <p><a  class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark" href="/create-task"></i>Crie uma tarefa</a>
             </p>
         </div>
 
