@@ -47,7 +47,25 @@
                                 Está completa?
                             </label>
                         </div>
-                        <div class="col-6 mt-3">
+                        <div class="col-2 mt-3">
+                            <h6>Status</h6>
+                            
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="status" 
+                                id="pending" th:value="${T(package br.com.ccvn.admtarefas.model.enums.taskStatus).PENDING}" th:field="*{status}"/>
+                              <label class="form-check-label" for="pending"> Pendente </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="status" 
+                                    id="inProgress" th:value="${T(package br.com.ccvn.admtarefas.model.enums.taskStatus).INPROGRESS}" th:field="*{status}"/>
+                                <label class="form-check-label" for="inProgress"> Em progresso </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="status" 
+                                    id="concluded" th:value="${T(package br.com.ccvn.admtarefas.model.enums.taskStatus).CONCLUDED}">                                       )}" th:field="*{status}"/>
+                                <label class="form-check-label" for="concluded"> Concluída </label>
+                            </div>
+                        <div class="col-12 mt-3">
                             <label for="endDate">Data de conclusão</label>
                             <input class="form-control" type="date" th:field="*{endDate}" id="endDate">
                         </div>

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.ccvn.admtarefas.service.TodoItemService;
+import br.com.ccvn.admtarefas.services.TodoItemService;
 
 @Controller
 public class HomeController {
