@@ -5,6 +5,8 @@ import java.time.Instant;
 
 import br.com.ccvn.admtarefas.model.enums.TaskStatus;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -47,6 +49,7 @@ public class TodoItem implements Serializable {
     private String endDate;
 
     @Getter
+    @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
 
 }

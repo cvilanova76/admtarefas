@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.ccvn.admtarefas.model.entities.TodoItem;
-import br.com.ccvn.admtarefas.services.TodoItemService;
+import br.com.ccvn.admtarefas.service.TodoItemService;
 import jakarta.validation.Valid;
 
 @Controller

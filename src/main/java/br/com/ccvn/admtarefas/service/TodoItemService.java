@@ -6,11 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ccvn.admtarefas.model.TodoItem;
+import br.com.ccvn.admtarefas.model.entities.TodoItem;
 import br.com.ccvn.admtarefas.repository.TodoItemRepository;
-
-
-
 
 @Service
 public class TodoItemService {
