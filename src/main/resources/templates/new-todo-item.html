@@ -22,7 +22,7 @@
   <div class="container mt-3">
     <div class="row mt-5 col-2">
       <p>
-        <a class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark" href="/">
+        <a class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark" th:href="@{/}">
           <i class="bi bi-arrows-left-square-fill">
           </i>Voltar
         </a>
@@ -34,7 +34,7 @@
       <div class="card-header">Crie uma tarefa
       </div>
       <div class="card-body">
-        <form action="#" th:action="@{/todo}" th:object="${todoItem}" method="POST">
+        <form th:action="@{/todo}" th:object="${todoItem}" method="POST">
           <div class="form-group mt-3">
             <label for="title">Título</label>
             <input class="form-control" type="text" th:field="*{title}" id="title" placeholder="Título" />
@@ -44,22 +44,13 @@
             <input class="form-control" type="text" th:field="*{description}" id="description"
               placeholder="Descrição" />
           </div>
+                <button type="submit" value="Submit" class="btn btn-light" data-mdb-ripple-color="dark">
+                  <i class="bi bi-plus-square-fill"></i> Criar tarefa
+                </button>
+              
         </form>
-        <div class="container">
-          <div class="card">
-            <div class="card-body">
-              <button type="submit" value="Submit" class="btn btn-light" data-mdb-ripple-color="dark">
-                <i class="bi bi-plus-square-fill"></i> Criar tarefa
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-
     </div>
-
   </div>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"></script>

@@ -38,43 +38,44 @@ public class TodoFormController {
     }
 // o uso do optional aqui permite jogar a exceção que impede refereciar um todoitem que não existe
 // simplificanod a lógica
-    @GetMapping("/delete/{id}")
-    public String deleteTodoItem(@PathVariable("id") Long id, Model model){
-        TodoItem todoItem = todoItemService
-            .getById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
+@GetMapping("/delete/{id}")
+public String deleteTodoItem(@PathVariable("id") Long id, Model model){
+    TodoItem todoItem = todoItemService
+        .getById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
 
-            todoItemService.delete(todoItem);
-            return "redirect:/";
-    }
+        todoItemService.delete(todoItem);
+        return "redirect:/";
+}
 
-    @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") Long id, Model model){
-        TodoItem todoItem = todoItemService
-            .getById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
+@GetMapping("/edit/{id}")
+public String showUpdateForm(@PathVariable("id") Long id, Model model){
+    TodoItem todoItem = todoItemService
+        .getById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
 
-            model.addAttribute("todo", todoItem);
-            return "edit-todo-item";
-    }
+        model.addAttribute("todo", todoItem);
+        return "edit-todo-item";
+}
 
-    @PostMapping("/todo/{id}")
-    public String updateTodoItem(@PathVariable("id") Long id, @Valid TodoItem todoItem, BindingResult result, Model model){
+@PostMapping("/todo/{id}")
+public String updateTodoItem(@PathVariable("id") Long id, @Valid TodoItem todoItem, BindingResult result, Model model){
 
-        TodoItem item = todoItemService
-            .getById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
+    TodoItem item = todoItemService
+        .getById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
 
-            todoItem.setComplete(todoItem.isComplete());
-            todoItem.setTitle(todoItem.getTitle());
-            todoItem.setDescription(todoItem.getDescription());
+        todoItem.setComplete(todoItem.isComplete());
+        todoItem.setTitle(todoItem.getTitle());
+        todoItem.setDescription(todoItem.getDescription());
 
 
-            todoItemService.save(item);
+        todoItemService.save(item);
 
-            return "redirect:/";
+        return "redirect:/";
 
-    }
+}
+
             
     }
     

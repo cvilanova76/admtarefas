@@ -28,7 +28,9 @@ public class TodoItem implements Serializable {
 
     private Instant createdAt;
 
-    private boolean isComplete;
+    @Getter
+    @Setter
+    private boolean complete;
 
     private String endDate;
 
@@ -36,7 +38,7 @@ public class TodoItem implements Serializable {
     public String toString() {
         return String.format(
                 "TodoItem{id=%d, title='%s', description='%s', createdAt='%s', isComplete='%s', endDate='%s'}",
-                id, title, description, createdAt, isComplete, endDate);
+                id, title, description, createdAt, complete, endDate);
     }
 
 }
