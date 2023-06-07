@@ -74,8 +74,19 @@ public String updateTodoItem(@PathVariable("id") Long id, @Valid TodoItem todoIt
 
         return "redirect:/";
 
-}
+}  }
+ 
+//tentei implementar um filtro, sem sucesso//
+/* 
+@RequestMapping("/view-todo")
+    public ModelAndView filter(@RequestParam("taskStatus") String taskStatus) {
+        // Converter a string em um objeto TaskStatus, se necessário
+        TaskStatus status = TaskStatus.valueOf(taskStatus);
 
-            
-    }
+        ModelAndView modelAndView = new ModelAndView("/create-todo");
+        modelAndView.addObject("taskStatus", TodoItemRepository.findTodoItemByTaskStatus(status));
+        modelAndView.addObject("todo", new TodoItem());
+        return modelAndView;
+    } */
+           
     

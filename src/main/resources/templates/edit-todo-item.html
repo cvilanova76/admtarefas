@@ -22,7 +22,8 @@
         <div class="row mt-5">
             <div class="col-2">
                 <p><a class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark" th:href="@{/}">
-                        <i class="bi bi-arrows-left-square-fill"></i>Voltar</a>
+                    <i class="bi bi-arrow-return-left">
+                    </i>Voltar</a>
                 </p>
             </div>
             <div class="card">
@@ -51,21 +52,18 @@
                             <h6>Status</h6>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="status" id="pending"
-                                    th:value="${T(br.com.ccvn.admtarefas.model.enums.taskStatus).PENDING}"
-                                    th:field="*{status}" />
+                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).PENDING}" id="pending"
+                                    th:field="*{taskStatus}" />
                                 <label class="form-check-label" for="pending"> Pendente </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="status" id="inProgress"
-                                    th:value="${T(br.com.ccvn.admtarefas.model.enums.taskStatus).INPROGRESS}"
-                                    th:field="*{status}" />
-                                <label class="form-check-label" for="inProgress"> Em progresso </label>
+                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).INPROGRESS}" id="inProgress"
+                                    th:field="*{taskStatus}" />
+                                <label class="form-check-label" for="inProgress"> Em andamento </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="status" id="concluded"
-                                    th:value="${T(br.com.ccvn.admtarefas.model.enums.taskStatus).CONCLUDED}">
-                                )}" th:field="*{status}"/>
+                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).CONCLUDED}" id="concluded"
+                                 th:field="*{taskStatus}"/>
                                 <label class="form-check-label" for="concluded"> Concluída </label>
                             </div>
                             <div class="col-12 mt-3">
