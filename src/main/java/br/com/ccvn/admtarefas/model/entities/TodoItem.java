@@ -11,16 +11,25 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "todo_items")
 @ToString
 // serialização para encapsular os dados numa série, otimizando o processo
 public class TodoItem implements Serializable {
 
+    @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
@@ -48,7 +57,8 @@ public class TodoItem implements Serializable {
     private String endDate;
 
     @Getter
+    @Setter
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
-
+    
 }

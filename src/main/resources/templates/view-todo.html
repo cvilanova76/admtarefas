@@ -31,14 +31,14 @@
         <div class="card-body">
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
-                    <tr>
-                        <th>Id</th>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                        <th>Criada em</th>
-                        <th>Concluída?</th>
-                        <th>Status</th>
-                        <th>Data de conclusão</th>
+                    
+                        <th scope="col" >Id</th>
+                        <th scope="col" >Título</th>
+                        <th scope="col" >Descrição</th>
+                        <th scope="col" >Criada em</th>
+                        <th scope="col" >Concluída?</th>
+                        <th scope="col" >Data de conclusão</th>
+                        <th scope="col" >Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,8 +51,8 @@
                             <span th:if="${item.complete} == true" th:text="Yes"></span>
                             <span th:unless="${complete} == true" th:text="No"></span>
                         </td>
-                        <td th:text="${item.taskStatus}"></td>
                         <td th:text="${item.endDate}"></td>
+                        <td th:text="${item.taskStatus}"></td>
                     </tr>
                 </tbody>
             </table>

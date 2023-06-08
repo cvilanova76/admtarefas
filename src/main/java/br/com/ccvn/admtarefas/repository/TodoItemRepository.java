@@ -7,7 +7,7 @@ import br.com.ccvn.admtarefas.model.entities.TodoItem;
 
 
 
-//@repository desnecessário pois o JpaRepository já implementa
+//@Repository desnecessário pois o JpaRepository já implementa
 public interface TodoItemRepository extends JpaRepository<TodoItem, Long>{         
     }
     

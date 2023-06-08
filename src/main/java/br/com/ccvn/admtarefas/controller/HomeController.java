@@ -13,7 +13,6 @@ public class HomeController {
     @Autowired
     private TodoItemService todoItemService;
     
-    //faz com que o controller retorne tanto model como view no mesmo return value
     @GetMapping("/")
     public ModelAndView index(){
         ModelAndView modelAndView = new ModelAndView("index");

@@ -32,8 +32,8 @@
                         <th>Descrição</th>
                         <th>Criada em</th>
                         <th>Concluída?</th>
-                        <th>Status</th>
                         <th>Data de conclusão</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,8 +58,8 @@
                             <span th:if="${item.complete} == true" th:text="Yes"></span>
                             <span th:unless="${complete} == true" th:text="No"></span>
                         </td>
-                        <td th:text="${item.taskStatus}"></td>
                         <td th:text="${item.endDate}"></td>
+                        <td th:text="${item.taskStatus}"></td>
                     </tr>
                 </tbody>
             </table>

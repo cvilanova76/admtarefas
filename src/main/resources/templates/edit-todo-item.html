@@ -22,8 +22,8 @@
         <div class="row mt-5">
             <div class="col-2">
                 <p><a class="btn btn-light btn-sm mb-3" data-mdb-ripple-color="dark" th:href="@{/}">
-                    <i class="bi bi-arrow-return-left">
-                    </i>Voltar</a>
+                        <i class="bi bi-arrow-return-left">
+                        </i>Voltar</a>
                 </p>
             </div>
             <div class="card">
@@ -33,51 +33,47 @@
                 <form th:action="@{/todo/{id}(id=${todo.id})}" th:object="${todo}" method="POST">
                     <div class="form-group mt-3">
                         <div class="col-6">
-                            <label for="title">Título</label>
-                            <input class="form-control" type="text" th:field="*{title}" id="title" placeholder="Título">
+                            <label class="form-lable" for="title">Título</label>
+                            <input class="form-control" type="text" th:field="*{title}" id="title" th:classappend="${#fields.hasErrors('title') ? 'is-invalid' : ''}" />
                         </div>
                         <div class="col-6 mt-3">
-                            <label for="description">Descrição</label>
-                            <input class="form-control" type="text" th:field="*{description}" id="description"
-                                placeholder="Descrição">
+                            <label class="form-lable" for="description">Descrição</label>
+                            <input class="form-control" type="text" th:field="*{description}" id="description" th:classappend="${#fields.hasErrors('description') ? 'is-invalid' : ''}" />
                         </div>
-                        <div class="col-6 form-check mt-3">
-                            <input class="'form-check-input" type="checkbox" id="complete" th:field="*{complete}"
-                                th:checked="${complete} == true">
+                        <div class="col-6 mt-3">
                             <label class="form-check-label" for="complete">
                                 Está completa?
                             </label>
                         </div>
+                        <div class="col-12 mt-3">
+                            <label for="endDate">Data de conclusão</label>
+                            <input class="form-control" type="date" th:field="*{endDate}" id="endDate">
+                        </div>
+                        <div class="row mb-3">
+                            <span th:errors="*{sexo}" style="color: rgb(209, 34, 34);"></span>
+                            <span th:errors="*{estadoCivil}" style="color: rgb(209, 34, 34);"></span>
+                        </div>
                         <div class="col-2 mt-3">
                             <h6>Status</h6>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name ="taskStatus" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).PENDING}" th:field="*{taskStatus}" id="pending" th:classappend="${#fields.hasErrors('taskStatus') ? 'is-invalid' : ''}">
+                                    <label class="form-check-label" for="pending"> Pendente </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name ="taskStatus"  th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).INPROGRESS}"  th:field="*{taskStatus}" id="inProgress" >
+                                    <label class="form-check-label" for="inProgress"> Em andamento </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name ="taskStatus"  th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).CONCLUDED}" th:field="*{taskStatus}" id="concluded" >
+                                    <label class="form-check-label" for="concluded"> Concluída </label>
+                                </div>
+                                <input type="hidden" th:field="*{createdAt}" />
 
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).PENDING}" id="pending"
-                                    th:field="*{taskStatus}" />
-                                <label class="form-check-label" for="pending"> Pendente </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).INPROGRESS}" id="inProgress"
-                                    th:field="*{taskStatus}" />
-                                <label class="form-check-label" for="inProgress"> Em andamento </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).CONCLUDED}" id="concluded"
-                                 th:field="*{taskStatus}"/>
-                                <label class="form-check-label" for="concluded"> Concluída </label>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <label for="endDate">Data de conclusão</label>
-                                <input class="form-control" type="date" th:field="*{endDate}" id="endDate">
-                            </div>
+                                <button type="submit" value="Submit" class="btn btn-light" data-mdb-ripple-color="dark">
+                                    <i class="bi bi-plus-square-fill"></i>Atualizar
+                                </button>
 
-                            <input type="hidden" th:field="*{createdAt}" />
-
-                            <button type="submit" value="Submit" class="btn btn-light" data-mdb-ripple-color="dark">
-                                <i class="bi bi-plus-square-fill"></i>Atualizar
-                            </button>
-
-                        </div>
+                            </div>
 
 
 
