@@ -22,8 +22,6 @@ public class TodoItemListDto {
 
     private Instant createdAt;
 
-    private boolean complete;
-
     private String endDate;
 
     private TaskStatus taskStatus;

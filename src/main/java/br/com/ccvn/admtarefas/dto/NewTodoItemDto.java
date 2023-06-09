@@ -4,7 +4,6 @@ import java.time.Instant;
 
 import br.com.ccvn.admtarefas.model.enums.TaskStatus;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
@@ -23,11 +22,8 @@ public class NewTodoItemDto {
 
     private Instant createdAt;
 
-    private boolean complete;
-
     private String endDate;
 
-    @NotNull(message = "Campo precisa ser preenchido")
     private TaskStatus taskStatus;
 
 }

@@ -6,7 +6,7 @@ import br.com.ccvn.admtarefas.model.enums.TaskStatus;
 
 public class TodoItemListDto {
 
-    public TodoItemListDto(Long id, String title, String description, Instant createdAt, boolean complete,
+    public TodoItemListDto(Long id, String title, String description, Instant createdAt,
             String endDate, TaskStatus taskStatus) {
     }
 

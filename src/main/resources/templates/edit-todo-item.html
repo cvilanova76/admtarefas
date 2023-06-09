@@ -34,29 +34,20 @@
                     <div class="form-group mt-3">
                         <div class="col-6">
                             <label class="form-lable" for="title">Título</label>
-                            <input class="form-control" type="text" th:field="*{title}" id="title" th:classappend="${#fields.hasErrors('title') ? 'is-invalid' : ''}" />
+                            <input class="form-control" type="text" th:field="*{title}" id="title" th:classappend="${#fields.hasErrors('taskStatus') ? 'is-invalid' : ''}" />
                         </div>
                         <div class="col-6 mt-3">
                             <label class="form-lable" for="description">Descrição</label>
-                            <input class="form-control" type="text" th:field="*{description}" id="description" th:classappend="${#fields.hasErrors('description') ? 'is-invalid' : ''}" />
-                        </div>
-                        <div class="col-6 mt-3">
-                            <label class="form-check-label" for="complete">
-                                Está completa?
-                            </label>
+                            <input class="form-control" type="text" th:field="*{description}" id="description" th:classappend="${#fields.hasErrors('taskStatus') ? 'is-invalid' : ''}"/>
                         </div>
                         <div class="col-12 mt-3">
                             <label for="endDate">Data de conclusão</label>
                             <input class="form-control" type="date" th:field="*{endDate}" id="endDate">
                         </div>
-                        <div class="row mb-3">
-                            <span th:errors="*{sexo}" style="color: rgb(209, 34, 34);"></span>
-                            <span th:errors="*{estadoCivil}" style="color: rgb(209, 34, 34);"></span>
-                        </div>
                         <div class="col-2 mt-3">
                             <h6>Status</h6>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name ="taskStatus" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).PENDING}" th:field="*{taskStatus}" id="pending" th:classappend="${#fields.hasErrors('taskStatus') ? 'is-invalid' : ''}">
+                                    <input class="form-check-input" type="radio" name ="taskStatus" th:value="${T(br.com.ccvn.admtarefas.model.enums.TaskStatus).PENDING}" th:field="*{taskStatus}" id="pending"  >
                                     <label class="form-check-label" for="pending"> Pendente </label>
                                 </div>
                                 <div class="form-check form-check-inline">

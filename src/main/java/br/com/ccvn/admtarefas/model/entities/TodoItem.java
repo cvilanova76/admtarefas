@@ -50,15 +50,14 @@ public class TodoItem implements Serializable {
 
     @Getter
     @Setter
-    private boolean complete;
-
-    @Getter
-    @Setter
     private String endDate;
 
     @Getter
     @Setter
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
+
+    public void setTaskStatus(String string) {
+    }
     
 }

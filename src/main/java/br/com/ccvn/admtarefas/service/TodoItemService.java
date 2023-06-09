@@ -34,7 +34,6 @@ public class TodoItemService {
         .title(todoItemDto.getTitle())
         .description(todoItemDto.getDescription())
         .createdAt(todoItemDto.getCreatedAt())
-        .complete(todoItemDto.isComplete())
         .endDate(todoItemDto.getEndDate())
         .taskStatus(todoItemDto.getTaskStatus())
         .build();
@@ -46,14 +45,13 @@ public class TodoItemService {
         .title(todoItem.getTitle())
         .description(todoItem.getDescription())
         .createdAt(todoItem.getCreatedAt())
-        .complete(todoItem.isComplete())
         .endDate(todoItem.getEndDate())
         .taskStatus(todoItem.getTaskStatus())
         .build();
     }
 
     private List<TodoItemListDto> todoItemList2TodoItemListDto(List<TodoItem> todoItems){
-        return todoItems.stream().map(todoItem -> new TodoItemListDto( todoItem.getId(), todoItem.getTitle(), todoItem.getDescription(), todoItem.getCreatedAt(), todoItem.isComplete(), todoItem.getEndDate(), todoItem.getTaskStatus()))
+        return todoItems.stream().map(todoItem -> new TodoItemListDto( todoItem.getId(), todoItem.getTitle(), todoItem.getDescription(), todoItem.getCreatedAt(), todoItem.getEndDate(), todoItem.getTaskStatus()))
         .collect(Collectors.toList());
     }
 

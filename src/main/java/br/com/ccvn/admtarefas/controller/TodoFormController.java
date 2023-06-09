@@ -41,6 +41,16 @@ public class TodoFormController {
         return "redirect:/";
     }
 
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") Long id, Model model){
+    TodoItem todoItem = todoItemService
+        .getById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Id da tarefa " + id + " não encontrado"));
+
+        model.addAttribute("todo", todoItem);
+        return "edit-todo-item";
+}
+
     @GetMapping("/delete/{id}")
     public String deleteTodoItem(@PathVariable("id") Long id, Model model) {
         todoItemService.deleteById(id);

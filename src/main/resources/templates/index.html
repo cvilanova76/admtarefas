@@ -31,7 +31,6 @@
                         <th>Título</th>
                         <th>Descrição</th>
                         <th>Criada em</th>
-                        <th>Concluída?</th>
                         <th>Data de conclusão</th>
                         <th>Status</th>
                     </tr>
@@ -54,10 +53,6 @@
                         <td th:text="${item.title}"></td>
                         <td th:text="${item.description}"></td>
                         <td th:text="${item.createdAt}"></td>
-                        <td>
-                            <span th:if="${item.complete} == true" th:text="Yes"></span>
-                            <span th:unless="${complete} == true" th:text="No"></span>
-                        </td>
                         <td th:text="${item.endDate}"></td>
                         <td th:text="${item.taskStatus}"></td>
                     </tr>

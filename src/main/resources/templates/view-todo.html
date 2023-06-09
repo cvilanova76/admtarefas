@@ -36,7 +36,6 @@
                         <th scope="col" >Título</th>
                         <th scope="col" >Descrição</th>
                         <th scope="col" >Criada em</th>
-                        <th scope="col" >Concluída?</th>
                         <th scope="col" >Data de conclusão</th>
                         <th scope="col" >Status</th>
                     </tr>
@@ -47,10 +46,6 @@
                         <td th:text="${item.title}"></td>
                         <td th:text="${item.description}"></td>
                         <td th:text="${item.createdAt}"></td>
-                        <td>
-                            <span th:if="${item.complete} == true" th:text="Yes"></span>
-                            <span th:unless="${complete} == true" th:text="No"></span>
-                        </td>
                         <td th:text="${item.endDate}"></td>
                         <td th:text="${item.taskStatus}"></td>
                     </tr>
@@ -59,18 +54,6 @@
 
         </div>
     </div>
-<!-- tentei implementar filtro, sem sucesso
-    <div class="container mt-3">
-        <form th:action="@{/view-todo}" method="post">
-            <label for="taskStatus">Filtrar por status</label>
-            <br>
-            <input name="taskStatus" id="taskStatus">
-            <button class="btn btn-light" data-mdb-ripple-color="dark" type="submit">
-                <i class="bi bi-funnel-fill"></i>
-            </button>
-        </form>
-    </div> -->
-    <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"></script>
 </body>
 
