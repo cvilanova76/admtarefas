@@ -26,7 +26,6 @@ import lombok.ToString;
 @Entity
 @Table(name = "todo_items")
 @ToString
-// serialização para encapsular os dados numa série, otimizando o processo
 public class TodoItem implements Serializable {
 
     @EqualsAndHashCode.Include
